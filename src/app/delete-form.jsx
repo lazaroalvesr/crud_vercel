@@ -1,7 +1,9 @@
 'use client';
 
-import { useFormState, useFormStatus } from "react-dom";
+import React, { useFormState } from "react-dom";
+import { useFormStatus } from "react-dom";
 import { deleteTodo } from "./actions";
+
 
 const initialState = {
     message: null,
@@ -17,7 +19,7 @@ function DeleteButton() {
     )
 }
 
-export function DeleteForm({ id, todo }: { id: number; todo: string }) {
+export function DeleteForm() {
     const [state, formAction] = useFormState(deleteTodo, initialState)
 
     return (
